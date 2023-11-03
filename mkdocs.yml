@@ -1,0 +1,9 @@
+site_name: "Urban Genome Documentation"
+site_url: "https://genome.johnvidler.co.uk/help/"
+
+theme:
+  name: 'material'
+
+nav:
+  - Home: 'index.md'
+  - Schema: 'schema.md'
