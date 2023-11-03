@@ -25,15 +25,3 @@ services:
       timeout: 10s
       retries: 20
       start_period: 3s
-
-#  app:
-#    build: nlp-app
-#    restart: unless-stopped
-#    environment:
-#      - DB_PASS=neo4j
-#      - DB_USER=neo4j
-#    port:
-#      - 8080:8080
-#    depends_on:
-#      neo4j:
-#        condition: service_healthy
