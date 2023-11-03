@@ -1,0 +1,39 @@
+version: '3.6'
+services:
+
+  neo4j:
+    image: neo4j:community
+    restart: unless-stopped
+    environment:
+      - NEO4J_AUTH=neo4j/demoServer
+      - NEO4J_server_logs_debug_enabled=true
+      - NEO4J_apoc_export_file_enabled=true
+      - NEO4J_apoc_import_file_enabled=true
+      - NEO4J_apoc_import_file_use__neo4j__config=true
+      - NEO4J_apoc_uuid_enabled=true
+      - NEO4J_PLUGINS=["apoc"]
+      - NEO4J_dbms_memory_transaction_total_max=3GB
+    ports:
+      - 7474:7474
+      - 7687:7687
+    volumes:
+      - ./data/neo4j:/data
+      - ./data/neo4j-plugins:/plugins
+    healthcheck:
+      test: wget http://localhost:7474 || exit 1
+      interval: 1s
+      timeout: 10s
+      retries: 20
+      start_period: 3s
+
+#  app:
+#    build: nlp-app
+#    restart: unless-stopped
+#    environment:
+#      - DB_PASS=neo4j
+#      - DB_USER=neo4j
+#    port:
+#      - 8080:8080
+#    depends_on:
+#      neo4j:
+#        condition: service_healthy

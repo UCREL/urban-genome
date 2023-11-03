@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "neobridge"
+version = "0.1.0"
+description = ""
+authors = ["Dr John Vidler <j.vidler@lancaster.ac.uk>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+spacy = "^3.7.2"
+nltk = "^3.8.1"
+ipython = "^8.17.2"
+neo4j = "^5.14.1"
+setuptools = "^68.2.2"
+wheel = "^0.41.3"
+loguru = "^0.7.2"
+pymusas = "^0.3.0"
+en-dual-none-contextual = {url = "https://github.com/UCREL/pymusas-models/releases/download/en_dual_none_contextual-0.3.3/en_dual_none_contextual-0.3.3-py3-none-any.whl"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

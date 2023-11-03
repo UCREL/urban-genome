@@ -1,0 +1,8 @@
+spacy
+nltk
+IPython
+neo4j
+setuptools
+wheel
+loguru
+pymusas
